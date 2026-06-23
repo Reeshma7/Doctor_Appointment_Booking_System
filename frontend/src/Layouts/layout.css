@@ -1,0 +1,261 @@
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f4f7fc;
+}
+
+/* ================= APP LAYOUT ================= */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ================= TOPBAR (MOBILE) ================= */
+
+.topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 1200;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.topbar-brand h3 {
+  color: #1e3a8a;
+  margin: 0;
+  font-size: 22px;
+}
+
+.topbar-brand span {
+  font-size: 13px;
+  color: gray;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1e3a8a, #0f172a);
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+  z-index: 1500;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.close {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* ================= MENU ================= */
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.menu li:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.menu li.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #fff;
+}
+
+/* ================= LOGOUT ================= */
+
+.logout {
+  margin-top: auto;
+  background: rgba(255, 0, 0, 0.15);
+}
+
+.logout:hover {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+/* ================= MAIN ================= */
+
+.app-main {
+  flex: 1;
+  margin-left: 260px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.header-left h2 {
+  color: #1e293b;
+  font-size: 24px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= PROFILE ================= */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.role {
+  font-size: 13px;
+  color: gray;
+}
+
+/* ================= CONTENT ================= */
+
+.app-content {
+  padding: 25px;
+  flex: 1;
+}
+
+/* ================= BACKDROP ================= */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1400;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .topbar {
+    display: flex;
+  }
+
+  .app-main {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 70px;
+  }
+
+  .sidebar {
+    left: -260px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .close {
+    display: block;
+  }
+
+  .header {
+    padding: 0 15px;
+  }
+
+  .header-left h2 {
+    font-size: 20px;
+  }
+
+  .profile-text {
+    display: none;
+  }
+}

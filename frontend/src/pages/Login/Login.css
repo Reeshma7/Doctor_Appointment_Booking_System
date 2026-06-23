@@ -1,0 +1,395 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM TOKENS & RESET
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  background-color: #f4f7fc;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base structural canvas centering wrapper */
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Symmetrical Main Card Frame */
+.login-window {
+  width: 100%;
+  max-width: 1024px;
+  min-height: 640px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
+  display: flex;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. LEFT SIDE PANEL: MEDICAL BRANDING & ILLUSTRATION
+   ========================================================================== */
+.brand-side {
+  flex: 1.1;
+  background: linear-gradient(145deg, #f0f4f9, #e2ebf5);
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border-right: 1px solid #e2e8f0;
+}
+
+/* Symmetrical Plus Logo Icon Box */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo .plus-icon {
+  background: #1e3a8a;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+}
+
+.logo-text h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.logo-text span {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Vector Graphic Display Wrapper */
+.illustration-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.illustration-wrapper img {
+  max-width: 85%;
+  max-height: 340px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply; /* Perfectly drops crisp item shadows on backgrounds */
+}
+
+/* ==========================================================================
+   3. RIGHT SIDE PANEL: USER INTERACTION AUTH FORM
+   ========================================================================== */
+.form-side {
+  flex: 1;
+  padding: 56px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.form-header {
+  margin-bottom: 28px;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.form-header .subtitle {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   4. SYSTEM ROLE SELECTOR COMPONENT (TOP POSITIONED)
+   ========================================================================== */
+.role-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.role-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+/* Safely obscure standard browser radios */
+.role-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Customized indicator design token */
+.custom-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+  background: #ffffff;
+}
+
+.role-option:hover input ~ .custom-radio {
+  border-color: #1e3a8a;
+}
+
+.role-option input:checked ~ .custom-radio {
+  border-color: #1e3a8a;
+}
+
+.role-option input:checked ~ .custom-radio::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1e3a8a;
+}
+
+/* Change active option label copy color dynamically */
+.role-option:has(input:checked) {
+  color: #1e3a8a;
+}
+
+/* ==========================================================================
+   5. INPUT COMPONENT FIELDS
+   ========================================================================== */
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.input-group input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #0f172a;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.08);
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
+.forgot-password a {
+  font-size: 13px;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.forgot-password a:hover {
+  color: #1e3a8a;
+}
+
+/* ==========================================================================
+   6. ACTIONS & CONTEXTUAL BUTTONS (WITH REGISTER FADE IN)
+   ========================================================================== */
+.login-btn, .register-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.login-btn {
+  background: #1e3a8a;
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+}
+
+.login-btn:hover {
+  background: #152a66;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.18);
+}
+
+/* Smooth clean animation when Register shows up for Patient */
+.register-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  animation: slideFadeIn 0.3s ease-out forwards;
+}
+
+.register-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+/* Standardized Divider Line Context */
+.divider-or {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 18px 0;
+  color: #94a3b8;
+  font-size: 13px;
+  animation: slideFadeIn 0.25s ease-out forwards;
+}
+
+.divider-or::before, .divider-or::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.divider-or:not(:empty)::before { margin-right: .75em; }
+.divider-or:not(:empty)::after { margin-left: .75em; }
+
+.footer-copyright {
+  margin-top: 36px;
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   7. VIEWPORT RESPONSIVENESS MEDIA QUERIES
+   ========================================================================== */
+
+/* Medium Devices (Tablets, Notebook Profiles) */
+@media (max-width: 960px) {
+  .form-side {
+    padding: 48px 40px;
+  }
+  
+  .brand-side {
+    padding: 32px;
+  }
+}
+
+/* Small Viewports (Collapses Two-Column Layout to Centered Single Panel) */
+@media (max-width: 840px) {
+  .brand-side {
+    display: none; /* Drop visual graphics completely on smaller layouts */
+  }
+  
+  .login-window {
+    max-width: 480px;
+    min-height: auto;
+  }
+  
+  .form-side {
+    padding: 44px 32px;
+  }
+}
+
+/* Pocket Micro-Devices (Smartphones) */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 16px;
+  }
+  
+  .form-side {
+    padding: 32px 20px;
+  }
+  
+  .form-header h2 {
+    font-size: 24px;
+  }
+  
+  .role-selector {
+    gap: 8px;
+  }
+  
+  .role-option {
+    font-size: 13px;
+    gap: 4px;
+  }
+}
+
+/* ==========================================================================
+   8. MICRO-INTERACTION KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

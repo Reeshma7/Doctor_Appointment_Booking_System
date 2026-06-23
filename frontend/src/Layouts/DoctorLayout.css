@@ -1,0 +1,225 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f4f7fc;
+}
+
+/* ================= LAYOUT ================= */
+
+.doctor-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.doctor-sidebar {
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1e3a8a, #0f172a);
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-header h2 {
+  font-size: 24px;
+}
+
+.sidebar-header svg {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* MENU */
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu li {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+  padding: 14px;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.menu li svg {
+  font-size: 18px;
+}
+
+/* LOGOUT */
+
+.logout {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  background: rgba(255, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.logout:hover {
+  background: rgba(255, 0, 0, 0.25);
+}
+
+/* ================= MAIN ================= */
+
+.doctor-main {
+  flex: 1;
+  margin-left: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.doctor-header {
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.doctor-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.doctor-header h2 {
+  color: #0f172a;
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* PROFILE */
+
+.doctor-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-profile img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.doctor-profile span {
+  font-weight: 600;
+  color: #334155;
+}
+
+/* ================= CONTENT ================= */
+
+.doctor-content {
+  padding: 25px;
+}
+
+/* ================= BACKDROP ================= */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+
+  .doctor-main {
+    margin-left: 0;
+  }
+
+  .doctor-sidebar {
+    left: -260px;
+  }
+
+  .doctor-sidebar.open {
+    left: 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .doctor-header {
+    padding: 0 15px;
+  }
+
+  .doctor-header h2 {
+    font-size: 18px;
+  }
+
+  .doctor-profile span {
+    display: none;
+  }
+
+  .doctor-content {
+    padding: 15px;
+  }
+
+  .doctor-sidebar {
+    width: 240px;
+  }
+}

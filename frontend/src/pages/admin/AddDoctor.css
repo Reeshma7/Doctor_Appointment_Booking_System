@@ -1,0 +1,50 @@
+.add-doctor {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.add-doctor h2 {
+  margin-bottom: 20px;
+}
+
+.doctor-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.doctor-form input,
+.doctor-form select,
+.doctor-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.doctor-form textarea {
+  min-height: 100px;
+}
+
+.preview-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.add-doctor button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .doctor-form {
+    grid-template-columns: 1fr;
+  }
+}

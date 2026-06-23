@@ -1,0 +1,95 @@
+.doctor-profile-page {
+  padding: 20px;
+}
+
+.profile-top-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,.05);
+  margin-bottom: 25px;
+}
+
+.profile-top-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-top-card h2 {
+  color: #0f172a;
+}
+
+.profile-top-card p {
+  color: #14b8a6;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.profile-top-card span {
+  color: #64748b;
+}
+
+.profile-form {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.05);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, 1fr);
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+}
+
+.save-btn {
+  background: #0f766e;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.save-btn:hover {
+  background: #115e59;
+}
+
+@media (max-width: 768px) {
+
+  .profile-top-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
