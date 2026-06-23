@@ -1,3 +1,10 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.*
+
 # Logs
 logs
 *.log
@@ -7,20 +14,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Build output
+dist/
+build/
 
-# Editor directories and files
-.vscode/*
+# Runtime files
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# IDE and Editor files
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
+
+# OS generated files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-node_modules/
-.env
+Thumbs.db
+
+# Misc
+*.local
